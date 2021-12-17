@@ -1,6 +1,6 @@
 # Calculator
 
-An online alculator with basic arithmetic operations built using HTML, CSS, and Javascript. It can be controlled by a mouse or keyboard.
+An online calculator with basic arithmetic operations built using HTML, CSS, and Javascript. It can be controlled by a mouse or keyboard.
 
 ## Features
 
