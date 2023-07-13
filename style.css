@@ -11,6 +11,10 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--primary-light);
     color: var(--primary-dark);
+
+    background-image: url('images/serrano-arenas.jpg');
+    background-repeat: no-repeat;
+    background-size: fill;
     
     display: flex;
     flex-direction: column;
@@ -25,16 +29,54 @@ header {
 
 #calculator {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 60vh;
-    width: 40vh;
-    background-color: var(--secondary-light);
+    height: 65vh;
+    width: 45vh;
+    background-color: var(--primary-light);
+    border: 2px solid var(--primary-dark);
     border-radius: 10px;
 }
 
+.display-container {
+    width: 80%;
+    flex: 1.5;
+    background-color: var(--secondary-light);
+    border: 1px solid var(--primary-dark);
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.btn-container {
+    width: 80%;
+    height: 80%;
+    flex: 4;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    margin: 20px;
+}
+
+#clear-btn,
+#delete-btn {
+    grid-column: span 2;
+}
+
+.btn {
+    padding: 10px;
+    background-color: var(--secondary-light);
+    border: 1px solid var(--primary-dark);
+    border-radius: 5px;
+    transition: all .5s ease;
+}
+.btn:hover {
+    background-color: var(--primary-dark);
+    color: var(--secondary-light);
+    transform: scale(1.1);
+}
+
 footer {
-    background: var(--primary-light);
     padding: 5px 0 5px 0;
     position: fixed;
     bottom: 0;
