@@ -1,0 +1,52 @@
+:root {
+    margin: 0;
+    padding: 0;
+
+    --primary-dark: #333333;
+    --primary-light: #ededed;
+    --secondary-light: #fefefe;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    text-align: center;
+    font-size: 24px;
+}
+
+#calculator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    width: 40vh;
+    background-color: var(--secondary-light);
+    border-radius: 10px;
+}
+
+footer {
+    background: var(--primary-light);
+    padding: 5px 0 5px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+
+}
+
+.github-img {
+    height: 20px;
+    margin-left: 10px;
+}
