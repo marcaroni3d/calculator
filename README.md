@@ -2,4 +2,4 @@
 
 A calculator made using HTML, CSS, and Javascript.
 
-[Live Demo](https://marcaroni3d.github.com/calculator)
+[Live Demo](https://marcaroni3d.github.io/calculator/)
