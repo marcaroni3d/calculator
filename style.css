@@ -74,6 +74,7 @@ header {
     background-color: var(--primary-dark);
     color: var(--secondary-light);
     transform: scale(1.1);
+    cursor: pointer;
 }
 
 footer {
