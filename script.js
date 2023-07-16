@@ -1,6 +1,6 @@
 // VARIABLES
-let firstOperand = ''
-let secondOperand = ''
+let firstOperand
+let secondOperand
 let currentOperation
 let shouldResetScreen = false
 
@@ -52,13 +52,13 @@ function appendNumber(number) {
     if (currentDisplay.textContent === '0' || shouldResetScreen) {
         resetScreen()
     }
-    if (currentDisplay.textContent.length < 20) {
+    if (currentDisplay.textContent.length < 10) {
         currentDisplay.textContent += number
     }
 }
 
 function addDecimal() {
-    if (currentDisplay.textContent === '') {
+    if (currentDisplay.textContent === '' || shouldResetScreen) {
         currentDisplay.textContent = '0'
     }
     if (currentDisplay.textContent.includes('.')) return
@@ -66,8 +66,11 @@ function addDecimal() {
 }
 
 function setOperator(input) {
-    firstOperand = currentDisplay.textContent
     currentOperation = input
+    firstOperand = currentDisplay.textContent
+    if (firstOperand == '') {
+        firstOperand = 0 
+    }
     previousDisplay.textContent = `${firstOperand} ${currentOperation}`
     shouldResetScreen = true
 }
@@ -88,6 +91,26 @@ function evaluate() {
 
 function roundResult(number) {
     return Math.round(number * 1000) / 1000
+}
+
+// KEYBOARD FUNCTIONALITY
+document.addEventListener('keydown', (e) => {
+    console.log(e.key)
+    if (e.key === 0 || e.key >= 1 && e.key <= 9) appendNumber(e.key)
+    if (e.key === '.') addDecimal()
+    if (e.key === 'Backspace') removeNumber()
+    if (e.key === 'Escape') clear()
+    if (e.key === '=' || e.key === 'Enter') evaluate()
+    if (e.key === '+' || e.key === '-' || e.key === 'x' || e.key === '*' || e.key === '/' || e.key === '%') {
+        setOperator(convertOperator(e.key))
+    }
+})
+
+function convertOperator(keyboardOperator) {
+    if (keyboardOperator === '+') return '+'
+    if (keyboardOperator === '-') return '-'
+    if (keyboardOperator === 'x' || keyboardOperator === '*') return 'x'
+    if (keyboardOperator === '/' || keyboardOperator === '%') return '%'
 }
 
 
